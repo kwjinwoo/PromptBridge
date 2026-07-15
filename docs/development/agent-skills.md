@@ -9,6 +9,8 @@ relations:
     target: docs-index
   - type: depends-on
     target: pre-commit-conventions
+  - type: depends-on
+    target: testing-convention
   - type: related-to
     target: project-status
 last_reviewed: 2026-07-15
@@ -25,9 +27,12 @@ documentation context and maintenance procedures travel with the repository.
 |---|---|
 | `$promptbridge-read-docs` | Build a minimal task-specific context set from canonical docs and typed relations |
 | `$promptbridge-maintain-docs` | Author and maintain canonical documents and derived graph artifacts |
+| `$promptbridge-tdd` | Implement executable behavior through focused Red-Green-Refactor cycles |
 
 The root `AGENTS.md` requires the read skill before substantive repository work
-and the maintenance skill whenever work changes durable project knowledge.
+and the maintenance skill whenever work changes durable project knowledge. It
+requires the TDD skill whenever implementation adds, changes, or fixes executable
+behavior.
 
 ## Discovery
 
@@ -51,6 +56,8 @@ uv run python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
   .agents/skills/promptbridge-read-docs
 uv run python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
   .agents/skills/promptbridge-maintain-docs
+uv run python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
+  .agents/skills/promptbridge-tdd
 ```
 
 Also run the docs graph validator and applicable pre-commit hooks. If the

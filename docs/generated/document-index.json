@@ -24,6 +24,7 @@
     {"id":"pre-commit-conventions","path":"docs/development/pre-commit.md","type":"development","status":"active"},
     {"id":"commit-convention","path":"docs/development/commit-convention.md","type":"development","status":"active"},
     {"id":"code-style-convention","path":"docs/development/code-style.md","type":"development","status":"active"},
+    {"id":"testing-convention","path":"docs/development/testing.md","type":"development","status":"active"},
     {"id":"agent-documentation-skills","path":"docs/development/agent-skills.md","type":"development","status":"active"},
     {"id":"project-roadmap","path":"docs/roadmap/index.md","type":"roadmap","status":"active"},
     {"id":"roadmap-phase-1-quality-validation","path":"docs/roadmap/phase-1-quality-validation.md","type":"roadmap-phase","status":"not-started"},

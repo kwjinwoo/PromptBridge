@@ -1,0 +1,4 @@
+interface:
+  display_name: "PromptBridge TDD"
+  short_description: "Drive behavior changes with Red-Green-Refactor"
+  default_prompt: "Use $promptbridge-tdd to implement this behavior through a focused Red-Green-Refactor cycle."

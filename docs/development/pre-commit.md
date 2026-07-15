@@ -83,6 +83,7 @@ normal repository work. `uv run` ensures the version declared in
 | Swift linting | `.swiftlint.yml` |
 | Commit messages | `pyproject.toml` and `docs/development/commit-convention.md` |
 | Docstrings and comments | `docs/development/code-style.md` |
+| Test-driven development | `docs/development/testing.md` |
 | Documentation graph | `scripts/validate_docs.py` |
 
 The pre-commit runner is pinned in `pyproject.toml`; individual hook revisions

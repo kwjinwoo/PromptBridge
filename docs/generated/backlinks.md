@@ -18,7 +18,7 @@ duplicate reverse edge solely to appear in this list.
 | Target | Referenced by |
 |---|---|
 | `product-overview` | Documentation Index, Project Status, System Overview |
-| `product-invariants` | Product Overview, Translate Mode, Refine Mode, Protected Elements, Preservation Validator, Clipboard State Machine, Failure Policy, Privacy Boundary, Project Roadmap |
+| `product-invariants` | Product Overview, Translate Mode, Refine Mode, Protected Elements, Preservation Validator, Clipboard State Machine, Failure Policy, Privacy Boundary, Testing Convention, Project Roadmap |
 | `translate-mode` | Product Invariants, Prompt Pipeline, Evaluation Methodology, Phase 1 |
 | `refine-mode` | Product Invariants, Phase 5 |
 | `protected-elements` | Project Terminology, Translate Mode, Refine Mode, Prompt Pipeline, Preservation Validator, Phase 2 |
@@ -31,10 +31,11 @@ duplicate reverse edge solely to appear in this list.
 | `model-comparison` | Phase 1, Evaluation Methodology, Ollama MVP Decision |
 | `application-compatibility` | Phase 3, Phase 6, Evaluation Methodology |
 | `project-roadmap` | Documentation Index, Project Status, all roadmap phases |
-| `pre-commit-conventions` | Documentation Index, Commit Convention, Code Documentation Convention, Agent Workflow Skills |
+| `pre-commit-conventions` | Documentation Index, Commit Convention, Code Documentation Convention, Testing Convention, Agent Workflow Skills |
 | `generated-knowledge-graph` | Documentation Index, Pre-commit Conventions |
 | `commit-convention` | Documentation Index |
 | `code-style-convention` | Documentation Index, Commit Convention |
+| `testing-convention` | Documentation Index, Agent Workflow Skills |
 | `agent-documentation-skills` | Documentation Index |
 
 Canonical document frontmatter contains the complete edge list. The

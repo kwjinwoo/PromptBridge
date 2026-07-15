@@ -25,7 +25,7 @@ Phase 0 — Project foundation and documentation knowledge graph.
 | Product specification | In progress | [Product Overview](product/overview.md) |
 | Documentation graph | In progress | [Documentation Index](index.md) |
 | Pre-commit quality gates | Implemented and passing | [Pre-commit Conventions](development/pre-commit.md) |
-| Development conventions | Active | [Commit Convention](development/commit-convention.md), [Code Style](development/code-style.md) |
+| Development conventions | Active | [Commit Convention](development/commit-convention.md), [Code Style](development/code-style.md), [Testing Convention](development/testing.md) |
 | Agent documentation workflow | Active | [Agent Skills](development/agent-skills.md) |
 | Prompt engine | Not started | [Phase 1](roadmap/phase-1-quality-validation.md) |
 | Preservation validator | Not started | [Phase 2](roadmap/phase-2-preservation-validator.md) |
@@ -46,6 +46,7 @@ Phase 0 — Project foundation and documentation knowledge graph.
 - Chose a docs-as-wiki model instead of a separate `.wiki/` directory.
 - Defined typed frontmatter relations and document splitting rules.
 - Added pre-commit checks for documentation, Python, and Swift conventions.
+- Added a repository TDD convention and agent workflow.
 
 ## Blockers
 

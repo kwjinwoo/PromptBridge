@@ -18,6 +18,8 @@ relations:
   - type: related-to
     target: code-style-convention
   - type: related-to
+    target: testing-convention
+  - type: related-to
     target: agent-documentation-skills
 last_reviewed: 2026-07-15
 ---
@@ -48,7 +50,8 @@ This directory is the canonical knowledge base for PromptBridge. Start with the
 | Development | [Pre-commit](development/pre-commit.md) | Shared local quality gates |
 | Commit convention | [Commit Convention](development/commit-convention.md) | Commitizen and Conventional Commits |
 | Code documentation | [Code Style](development/code-style.md) | Python docstrings and Swift DocC comments |
-| Agent workflow | [Agent Skills](development/agent-skills.md) | Docs context loading and maintenance |
+| Testing | [Testing Convention](development/testing.md) | TDD cycles, test design, and verification evidence |
+| Agent workflow | [Agent Skills](development/agent-skills.md) | Context loading, TDD, and docs maintenance |
 | Roadmap | [Roadmap Index](roadmap/index.md) | Delivery phases |
 
 ## Generated navigation

@@ -78,10 +78,14 @@ graph LR
     precommit -->|"informs"| status["Project Status"]
     commit["Commit Convention"] -->|"part-of"| precommit
     style["Code Documentation Convention"] -->|"part-of"| precommit
+    testing["Testing Convention"] -->|"related-to"| precommit
+    testing -->|"validates"| invariants["Product Invariants"]
     skills["Agent Workflow Skills"] -->|"depends-on"| precommit
+    skills -->|"depends-on"| testing
     skills -->|"related-to"| status
     index["Documentation Index"] -->|"related-to"| precommit
     index -->|"related-to"| commit
     index -->|"related-to"| style
+    index -->|"related-to"| testing
     index -->|"related-to"| skills
 ```

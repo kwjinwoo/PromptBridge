@@ -43,9 +43,16 @@
 
 - Manage Python tooling with uv.
 - Run repository tools through `uv run`.
+- Use `$promptbridge-tdd` for implementation that adds, changes, or fixes
+  executable behavior.
+- Follow Red-Green-Refactor: demonstrate the behavior with a failing test, make
+  the minimum change pass, then refactor while tests stay green.
+- Do not weaken or remove valid tests merely to make the suite pass. State when
+  TDD does not apply and why.
 - Follow `docs/development/commit-convention.md` for commit messages.
 - Follow `docs/development/code-style.md` for Python docstrings and Swift
   documentation comments.
+- Follow `docs/development/testing.md` for test design and verification evidence.
 
 ## Verification
 
