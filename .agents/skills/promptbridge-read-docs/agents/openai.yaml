@@ -1,0 +1,4 @@
+interface:
+  display_name: "Read PromptBridge Docs"
+  short_description: "Build task context from the docs knowledge graph"
+  default_prompt: "Use $promptbridge-read-docs to gather the relevant PromptBridge context before starting this task."

@@ -1,0 +1,15 @@
+# PromptBridge Swift formatting conventions
+--indent 4
+--linebreaks lf
+--maxwidth 100
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--trimwhitespace always
+--semicolons never
+--commas inline
+
+--exclude **/.build
+--exclude **/build
+--exclude **/DerivedData
+--exclude **/Generated

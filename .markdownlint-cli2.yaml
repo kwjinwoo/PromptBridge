@@ -1,0 +1,10 @@
+config:
+  default: true
+  MD013: false
+  MD024:
+    siblings_only: true
+  # Canonical docs use both a frontmatter title and a visible H1.
+  MD025: false
+  MD033: false
+  # Compact tables are preferred over source-aligned table columns.
+  MD060: false

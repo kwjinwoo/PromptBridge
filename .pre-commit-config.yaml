@@ -1,0 +1,80 @@
+minimum_pre_commit_version: "4.0.0"
+
+default_stages:
+  - pre-commit
+
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args:
+          - --maxkb=1024
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.22.1
+    hooks:
+      - id: markdownlint-cli2
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.14
+    hooks:
+      - id: ruff-check
+        args:
+          - --fix
+      - id: ruff-format
+
+  - repo: https://github.com/nicklockwood/SwiftFormat
+    rev: 0.61.1
+    hooks:
+      - id: swiftformat
+        args:
+          - --config
+          - .swiftformat
+
+  - repo: https://github.com/realm/SwiftLint
+    rev: 0.63.2
+    hooks:
+      - id: swiftlint
+        args:
+          - --config
+          - .swiftlint.yml
+          - --strict
+
+  - repo: local
+    hooks:
+      - id: commitizen
+        name: validate commit message with Commitizen
+        description: Enforce Conventional Commits through the uv-managed Commitizen.
+        entry: uv run --frozen cz check --commit-msg-file
+        language: system
+        stages:
+          - commit-msg
+      - id: validate-docs-graph
+        name: validate docs knowledge graph
+        description: Validate docs frontmatter, relations, links, and generated index.
+        entry: python scripts/validate_docs.py
+        language: python
+        additional_dependencies:
+          - PyYAML==6.0.3
+        files: ^(?:docs/|scripts/validate_docs\.py$)
+        pass_filenames: false

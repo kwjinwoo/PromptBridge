@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain PromptBridge Docs"
+  short_description: "Write and maintain the docs knowledge graph"
+  default_prompt: "Use $promptbridge-maintain-docs to update PromptBridge documentation and keep its knowledge graph valid."

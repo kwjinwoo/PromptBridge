@@ -1,0 +1,48 @@
+strict: false
+
+opt_in_rules:
+  - missing_docs
+  - orphaned_doc_comment
+
+excluded:
+  - .build
+  - build
+  - DerivedData
+  - Generated
+
+line_length:
+  warning: 100
+  error: 120
+  ignores_comments: true
+  ignores_urls: true
+
+file_length:
+  warning: 500
+  error: 800
+
+type_body_length:
+  warning: 300
+  error: 500
+
+function_body_length:
+  warning: 60
+  error: 100
+
+identifier_name:
+  min_length:
+    warning: 2
+  excluded:
+    - id
+    - x
+    - y
+
+missing_docs:
+  warning:
+    - open
+    - public
+  excludes_extensions: true
+  excludes_inherited_types: true
+  excludes_trivial_init: true
+  evaluate_effective_access_control_level: true
+
+reporter: xcode
