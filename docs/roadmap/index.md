@@ -19,7 +19,7 @@ relations:
     target: roadmap-phase-5-refine-mode
   - type: defines
     target: roadmap-phase-6-quality-improvements
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Project Roadmap
@@ -29,17 +29,21 @@ dates. [Project Status](../status.md) records the current repository state.
 
 ## Phase 0 — Foundation
 
-Status: **In progress**
+Status: **Completed**
 
 Establish canonical documentation, product invariants, the knowledge graph, and
 documentation validation. Phase 0 is complete when the initial documents are
 reviewed and automated graph checks pass.
 
+The product overview and invariants were reviewed against their connected
+transformation, architecture, failure, and privacy documents. The canonical
+graph validator and the complete local pre-commit suite passed at Phase 0 exit.
+
 ## Delivery phases
 
 | Phase | Goal | Status | Primary exit criterion |
 |---|---|---|---|
-| [Phase 1](phase-1-quality-validation.md) | Validate transformation quality | Not started | A baseline local model is selected from reproducible results |
+| [Phase 1](phase-1-quality-validation.md) | Validate transformation quality | In progress | A baseline local model is selected from reproducible results |
 | [Phase 2](phase-2-preservation-validator.md) | Build preservation pipeline | Not started | Required protected-element tests pass |
 | [Phase 3](phase-3-hotkey-prototype.md) | Prove end-to-end replacement | Not started | Selection transforms safely in target apps |
 | [Phase 4](phase-4-macos-application.md) | Deliver the MVP application | Not started | Menu-bar MVP satisfies product invariants |

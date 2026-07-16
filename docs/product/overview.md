@@ -2,7 +2,7 @@
 id: product-overview
 title: Product Overview
 type: product
-status: proposed
+status: active
 authority: canonical
 relations:
   - type: defines
@@ -11,7 +11,7 @@ relations:
     target: project-terminology
   - type: constrains
     target: system-overview
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Product Overview

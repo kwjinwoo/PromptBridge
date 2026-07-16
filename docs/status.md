@@ -9,21 +9,21 @@ relations:
     target: project-roadmap
   - type: depends-on
     target: product-overview
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Project Status
 
 ## Current phase
 
-Phase 0 — Project foundation and documentation knowledge graph.
+Phase 1 — Transformation quality validation.
 
 ## Overall status
 
 | Area | State | Evidence |
 |---|---|---|
-| Product specification | In progress | [Product Overview](product/overview.md) |
-| Documentation graph | In progress | [Documentation Index](index.md) |
+| Product specification | Active | [Product Overview](product/overview.md), [Product Invariants](product/invariants.md) |
+| Documentation graph | Implemented and passing locally | [Documentation Index](index.md) |
 | Pre-commit quality gates | Implemented and passing | [Pre-commit Conventions](development/pre-commit.md) |
 | Development conventions | Active | [Commit Convention](development/commit-convention.md), [Code Style](development/code-style.md), [Testing Convention](development/testing.md) |
 | Agent documentation workflow | Active | [Agent Skills](development/agent-skills.md) |
@@ -36,12 +36,16 @@ Phase 0 — Project foundation and documentation knowledge graph.
 
 ## Active work
 
-- Establish the canonical docs-as-wiki structure.
-- Convert the initial project brief into focused, interlinked documents.
+- Create the initial synthetic evaluation dataset and scoring rules.
+- Define the versioned Translate Mode prompt and evaluation configuration.
 - Integrate the local quality gates into the future CI workflow.
 
 ## Recently completed
 
+- Completed Phase 0 after reviewing the product overview and invariants against
+  their connected transformation, architecture, failure, and privacy documents.
+- Validated the canonical documentation graph and complete local pre-commit
+  quality gate at Phase 0 exit.
 - Defined the initial product scope and MVP boundary.
 - Chose a docs-as-wiki model instead of a separate `.wiki/` directory.
 - Defined typed frontmatter relations and document splitting rules.
@@ -54,8 +58,8 @@ None currently recorded.
 
 ## Next milestone
 
-Complete Phase 0 by validating the documentation graph and reviewing the
-canonical product invariants.
+Version the initial synthetic evaluation dataset and scoring rules required by
+[Phase 1](roadmap/phase-1-quality-validation.md).
 
 ## Known gaps
 

@@ -8,10 +8,11 @@ identifiers, commands, paths, formatting, and technical intent.
 
 ## Project status
 
-PromptBridge is currently in Phase 0: project foundation and documentation. The
+PromptBridge is currently in Phase 1: transformation quality validation. The
 docs knowledge graph, local quality gates, development conventions, and agent
-workflows are available. The prompt engine, preservation validator, global
-hotkey, and macOS application are not implemented yet.
+workflows are available. The initial evaluation dataset, prompt engine,
+preservation validator, global hotkey, and macOS application are not implemented
+yet.
 
 - [Current status](docs/status.md)
 - [Roadmap](docs/roadmap/index.md)

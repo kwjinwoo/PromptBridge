@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15",
+  "generated_at": "2026-07-16",
   "authority": "derived",
   "documents": [
     {"id":"docs-index","path":"docs/index.md","type":"index","status":"active"},
     {"id":"project-status","path":"docs/status.md","type":"status","status":"in-progress"},
-    {"id":"product-overview","path":"docs/product/overview.md","type":"product","status":"proposed"},
-    {"id":"product-invariants","path":"docs/product/invariants.md","type":"product","status":"proposed"},
+    {"id":"product-overview","path":"docs/product/overview.md","type":"product","status":"active"},
+    {"id":"product-invariants","path":"docs/product/invariants.md","type":"product","status":"active"},
     {"id":"project-terminology","path":"docs/product/terminology.md","type":"glossary","status":"proposed"},
     {"id":"translate-mode","path":"docs/transformation/translate-mode.md","type":"transformation","status":"proposed"},
     {"id":"refine-mode","path":"docs/transformation/refine-mode.md","type":"transformation","status":"deferred"},
@@ -27,7 +27,7 @@
     {"id":"testing-convention","path":"docs/development/testing.md","type":"development","status":"active"},
     {"id":"agent-documentation-skills","path":"docs/development/agent-skills.md","type":"development","status":"active"},
     {"id":"project-roadmap","path":"docs/roadmap/index.md","type":"roadmap","status":"active"},
-    {"id":"roadmap-phase-1-quality-validation","path":"docs/roadmap/phase-1-quality-validation.md","type":"roadmap-phase","status":"not-started"},
+    {"id":"roadmap-phase-1-quality-validation","path":"docs/roadmap/phase-1-quality-validation.md","type":"roadmap-phase","status":"in-progress"},
     {"id":"roadmap-phase-2-preservation-validator","path":"docs/roadmap/phase-2-preservation-validator.md","type":"roadmap-phase","status":"not-started"},
     {"id":"roadmap-phase-3-hotkey-prototype","path":"docs/roadmap/phase-3-hotkey-prototype.md","type":"roadmap-phase","status":"not-started"},
     {"id":"roadmap-phase-4-macos-application","path":"docs/roadmap/phase-4-macos-application.md","type":"roadmap-phase","status":"not-started"},

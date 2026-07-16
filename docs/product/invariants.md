@@ -2,7 +2,7 @@
 id: product-invariants
 title: Product Invariants
 type: product
-status: proposed
+status: active
 authority: canonical
 relations:
   - type: constrains
@@ -19,13 +19,24 @@ relations:
     target: failure-policy
   - type: constrains
     target: privacy-boundary
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Product Invariants
 
 These constraints define behavior that implementations must not weaken without
 an explicit architectural decision.
+
+## Review state
+
+The Phase 0 review found these constraints consistent with
+[Translate Mode](../transformation/translate-mode.md), the
+[Preservation Validator](../architecture/preservation-validator.md), the
+[Clipboard State Machine](../architecture/clipboard-state-machine.md), the
+[Failure Policy](../policies/failure-policy.md), and the
+[Privacy Boundary](../policies/privacy-boundary.md). They are active product
+requirements; connected proposed documents do not represent implemented
+behavior.
 
 ## Intent preservation
 

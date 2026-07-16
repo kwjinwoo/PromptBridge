@@ -2,7 +2,7 @@
 id: roadmap-phase-1-quality-validation
 title: Phase 1 — Transformation Quality Validation
 type: roadmap-phase
-status: not-started
+status: in-progress
 authority: canonical
 relations:
   - type: part-of
@@ -13,7 +13,7 @@ relations:
     target: model-comparison
   - type: informs
     target: ollama-mvp-decision
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Phase 1 — Transformation Quality Validation
