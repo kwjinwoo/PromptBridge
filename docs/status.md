@@ -16,7 +16,8 @@ last_reviewed: 2026-07-16
 
 ## Current phase
 
-Phase 1 — Transformation quality validation.
+Phase 1 — Transformation quality validation is completed. Phase 2 is next and
+has not started.
 
 ## Overall status
 
@@ -27,17 +28,20 @@ Phase 1 — Transformation quality validation.
 | Pre-commit quality gates | Implemented and passing | [Pre-commit Conventions](development/pre-commit.md) |
 | Development conventions | Active | [Commit Convention](development/commit-convention.md), [Code Style](development/code-style.md), [Testing Convention](development/testing.md) |
 | Agent documentation workflow | Active | [Agent Skills](development/agent-skills.md) |
-| Prompt engine | Not started | [Phase 1](roadmap/phase-1-quality-validation.md) |
+| Evaluation runner | Implemented and passing | [Phase 1](roadmap/phase-1-quality-validation.md), [Raw Result](../evaluation/results/phase1-apple-m5-2026-07-16.json) |
+| Translate prompt | Validated for Phase 1 baseline | [Translate Mode](transformation/translate-mode.md), [Model Comparison](evaluation/model-comparison.md) |
+| Production prompt engine | Not started | [Prompt Pipeline](architecture/prompt-pipeline.md) |
 | Preservation validator | Not started | [Phase 2](roadmap/phase-2-preservation-validator.md) |
 | Hotkey prototype | Not started | [Phase 3](roadmap/phase-3-hotkey-prototype.md) |
 | macOS application | Not started | [Phase 4](roadmap/phase-4-macos-application.md) |
-| Evaluation dataset | Not started | [Evaluation Methodology](evaluation/methodology.md) |
+| Evaluation dataset | Implemented for Phase 1 | [Evaluation Methodology](evaluation/methodology.md) |
+| Python unit tests | Implemented and passing | [Testing Convention](development/testing.md) |
 | CI | Not configured | No workflow exists |
 
 ## Active work
 
-- Create the initial synthetic evaluation dataset and scoring rules.
-- Define the versioned Translate Mode prompt and evaluation configuration.
+- Begin Phase 2 with focused tests for protected-element extraction and exact
+  restoration.
 - Integrate the local quality gates into the future CI workflow.
 
 ## Recently completed
@@ -51,6 +55,10 @@ Phase 1 — Transformation quality validation.
 - Defined typed frontmatter relations and document splitting rules.
 - Added pre-commit checks for documentation, Python, and Swift conventions.
 - Added a repository TDD convention and agent workflow.
+- Completed Phase 1 with a versioned 16-case synthetic dataset, deterministic
+  runner, two-model comparison, and regression-tested scoring calibration.
+- Selected `qwen3.5:4b` Q4_K_M as the baseline after it passed every quality and
+  latency gate; accepted Ollama as the initial MVP runtime.
 
 ## Blockers
 
@@ -58,14 +66,14 @@ None currently recorded.
 
 ## Next milestone
 
-Version the initial synthetic evaluation dataset and scoring rules required by
-[Phase 1](roadmap/phase-1-quality-validation.md).
+Start the deterministic preservation pipeline required by
+[Phase 2](roadmap/phase-2-preservation-validator.md).
 
 ## Known gaps
 
-- No prompt-engine implementation exists.
-- No baseline evaluation dataset exists.
-- Local model candidates have not been benchmarked.
+- No production prompt-engine implementation exists.
+- The Phase 1 keyword-based coverage and addition scores are deterministic
+  proxies, not complete semantic judgments.
 - Clipboard behavior has not been prototyped against target applications.
 - Documentation graph validation is available locally but not automated in CI.
 
@@ -74,6 +82,6 @@ Version the initial synthetic evaluation dataset and scoring rules required by
 | Check | Status |
 |---|---|
 | Build | Not configured |
-| Unit tests | Not configured |
+| Unit tests | Python evaluation suite passing; Swift not configured |
 | Documentation graph | Local pre-commit validation passing |
 | Continuous integration | Not configured |

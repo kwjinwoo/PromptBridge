@@ -43,7 +43,7 @@ graph validator and the complete local pre-commit suite passed at Phase 0 exit.
 
 | Phase | Goal | Status | Primary exit criterion |
 |---|---|---|---|
-| [Phase 1](phase-1-quality-validation.md) | Validate transformation quality | In progress | A baseline local model is selected from reproducible results |
+| [Phase 1](phase-1-quality-validation.md) | Validate transformation quality | Completed | `qwen3.5:4b` passed the versioned quality and latency gates |
 | [Phase 2](phase-2-preservation-validator.md) | Build preservation pipeline | Not started | Required protected-element tests pass |
 | [Phase 3](phase-3-hotkey-prototype.md) | Prove end-to-end replacement | Not started | Selection transforms safely in target apps |
 | [Phase 4](phase-4-macos-application.md) | Deliver the MVP application | Not started | Menu-bar MVP satisfies product invariants |
