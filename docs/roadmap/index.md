@@ -19,7 +19,7 @@ relations:
     target: roadmap-phase-5-refine-mode
   - type: defines
     target: roadmap-phase-6-quality-improvements
-last_reviewed: 2026-07-16
+last_reviewed: 2026-07-17
 ---
 
 # Project Roadmap
@@ -44,7 +44,7 @@ graph validator and the complete local pre-commit suite passed at Phase 0 exit.
 | Phase | Goal | Status | Primary exit criterion |
 |---|---|---|---|
 | [Phase 1](phase-1-quality-validation.md) | Validate transformation quality | Completed | `qwen3.5:4b` passed the versioned quality and latency gates |
-| [Phase 2](phase-2-preservation-validator.md) | Build preservation pipeline | Not started | Required protected-element tests pass |
+| [Phase 2](phase-2-preservation-validator.md) | Build preservation pipeline | Completed | Deterministic preservation and fail-closed retry tests pass |
 | [Phase 3](phase-3-hotkey-prototype.md) | Prove end-to-end replacement | Not started | Selection transforms safely in target apps |
 | [Phase 4](phase-4-macos-application.md) | Deliver the MVP application | Not started | Menu-bar MVP satisfies product invariants |
 | [Phase 5](phase-5-refine-mode.md) | Add explicit refinement | Deferred | Coverage and hallucination gates pass |

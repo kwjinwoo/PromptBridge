@@ -9,15 +9,15 @@ relations:
     target: project-roadmap
   - type: depends-on
     target: product-overview
-last_reviewed: 2026-07-16
+last_reviewed: 2026-07-17
 ---
 
 # Project Status
 
 ## Current phase
 
-Phase 1 — Transformation quality validation is completed. Phase 2 is next and
-has not started.
+Phase 2 — The deterministic preservation pipeline is completed. Phase 3 is next
+and has not started.
 
 ## Overall status
 
@@ -31,7 +31,7 @@ has not started.
 | Evaluation runner | Implemented and passing | [Phase 1](roadmap/phase-1-quality-validation.md), [Raw Result](../evaluation/results/phase1-apple-m5-2026-07-16.json) |
 | Translate prompt | Validated for Phase 1 baseline | [Translate Mode](transformation/translate-mode.md), [Model Comparison](evaluation/model-comparison.md) |
 | Production prompt engine | Not started | [Prompt Pipeline](architecture/prompt-pipeline.md) |
-| Preservation validator | Not started | [Phase 2](roadmap/phase-2-preservation-validator.md) |
+| Preservation validator | Implemented and passing | [Phase 2](roadmap/phase-2-preservation-validator.md), [`tests/test_preservation.py`](../tests/test_preservation.py) |
 | Hotkey prototype | Not started | [Phase 3](roadmap/phase-3-hotkey-prototype.md) |
 | macOS application | Not started | [Phase 4](roadmap/phase-4-macos-application.md) |
 | Evaluation dataset | Implemented for Phase 1 | [Evaluation Methodology](evaluation/methodology.md) |
@@ -40,8 +40,8 @@ has not started.
 
 ## Active work
 
-- Begin Phase 2 with focused tests for protected-element extraction and exact
-  restoration.
+- Begin Phase 3 with a hotkey-driven selection capture and safe replacement
+  prototype.
 - Integrate the local quality gates into the future CI workflow.
 
 ## Recently completed
@@ -59,6 +59,9 @@ has not started.
   runner, two-model comparison, and regression-tested scoring calibration.
 - Selected `qwen3.5:4b` Q4_K_M as the baseline after it passed every quality and
   latency gate; accepted Ollama as the initial MVP runtime.
+- Completed Phase 2 with deterministic protected-element detection, placeholder
+  restoration, category-level validation, fail-closed structured results, and a
+  single bounded preservation retry.
 
 ## Blockers
 
@@ -66,12 +69,13 @@ None currently recorded.
 
 ## Next milestone
 
-Start the deterministic preservation pipeline required by
-[Phase 2](roadmap/phase-2-preservation-validator.md).
+Start the end-to-end replacement prototype required by
+[Phase 3](roadmap/phase-3-hotkey-prototype.md).
 
 ## Known gaps
 
-- No production prompt-engine implementation exists.
+- No production model-backed prompt-engine integration exists; only the Phase 2
+  preservation subsystem is implemented.
 - The Phase 1 keyword-based coverage and addition scores are deterministic
   proxies, not complete semantic judgments.
 - Clipboard behavior has not been prototyped against target applications.

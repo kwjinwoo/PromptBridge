@@ -2,7 +2,7 @@
 id: protected-elements
 title: Protected Elements
 type: transformation
-status: proposed
+status: implemented
 authority: canonical
 relations:
   - type: implements
@@ -11,7 +11,7 @@ relations:
     target: prompt-pipeline
   - type: informs
     target: preservation-validator
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-17
 ---
 
 # Protected Elements
@@ -55,3 +55,12 @@ protected merely because they can be identifiers.
 
 Markdown AST or Tree-sitter integration is deferred until evidence shows that
 regex and Markdown-oriented extraction are insufficient.
+
+## Implementation status
+
+The Phase 2 [preservation module](../../src/promptbridge/preservation.py)
+implements the unambiguous MVP categories with non-overlapping regex spans.
+Inline code, POSIX paths, HTTP(S) URLs, supported CLI commands, and unambiguous
+identifiers receive collision-resistant placeholders. Fenced code, numbers, and
+versions remain visible and are validated after restoration. The implementation
+does not claim to recognize ambiguous identifiers or arbitrary shell grammar.

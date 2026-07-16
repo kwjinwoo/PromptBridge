@@ -7,7 +7,7 @@ authority: derived
 relations:
   - type: related-to
     target: generated-knowledge-graph
-last_reviewed: 2026-07-16
+last_reviewed: 2026-07-17
 ---
 
 # Generated Backlinks

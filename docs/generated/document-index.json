@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16",
+  "generated_at": "2026-07-17",
   "authority": "derived",
   "documents": [
     {"id":"docs-index","path":"docs/index.md","type":"index","status":"active"},
@@ -9,10 +9,10 @@
     {"id":"project-terminology","path":"docs/product/terminology.md","type":"glossary","status":"proposed"},
     {"id":"translate-mode","path":"docs/transformation/translate-mode.md","type":"transformation","status":"proposed"},
     {"id":"refine-mode","path":"docs/transformation/refine-mode.md","type":"transformation","status":"deferred"},
-    {"id":"protected-elements","path":"docs/transformation/protected-elements.md","type":"transformation","status":"proposed"},
+    {"id":"protected-elements","path":"docs/transformation/protected-elements.md","type":"transformation","status":"implemented"},
     {"id":"system-overview","path":"docs/architecture/system-overview.md","type":"architecture","status":"proposed"},
     {"id":"prompt-pipeline","path":"docs/architecture/prompt-pipeline.md","type":"architecture","status":"proposed"},
-    {"id":"preservation-validator","path":"docs/architecture/preservation-validator.md","type":"architecture","status":"proposed"},
+    {"id":"preservation-validator","path":"docs/architecture/preservation-validator.md","type":"architecture","status":"implemented"},
     {"id":"clipboard-state-machine","path":"docs/architecture/clipboard-state-machine.md","type":"architecture","status":"proposed"},
     {"id":"failure-policy","path":"docs/policies/failure-policy.md","type":"policy","status":"proposed"},
     {"id":"privacy-boundary","path":"docs/policies/privacy-boundary.md","type":"policy","status":"proposed"},
@@ -28,7 +28,7 @@
     {"id":"agent-documentation-skills","path":"docs/development/agent-skills.md","type":"development","status":"active"},
     {"id":"project-roadmap","path":"docs/roadmap/index.md","type":"roadmap","status":"active"},
     {"id":"roadmap-phase-1-quality-validation","path":"docs/roadmap/phase-1-quality-validation.md","type":"roadmap-phase","status":"completed"},
-    {"id":"roadmap-phase-2-preservation-validator","path":"docs/roadmap/phase-2-preservation-validator.md","type":"roadmap-phase","status":"not-started"},
+    {"id":"roadmap-phase-2-preservation-validator","path":"docs/roadmap/phase-2-preservation-validator.md","type":"roadmap-phase","status":"completed"},
     {"id":"roadmap-phase-3-hotkey-prototype","path":"docs/roadmap/phase-3-hotkey-prototype.md","type":"roadmap-phase","status":"not-started"},
     {"id":"roadmap-phase-4-macos-application","path":"docs/roadmap/phase-4-macos-application.md","type":"roadmap-phase","status":"not-started"},
     {"id":"roadmap-phase-5-refine-mode","path":"docs/roadmap/phase-5-refine-mode.md","type":"roadmap-phase","status":"deferred"},

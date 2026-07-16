@@ -2,7 +2,7 @@
 id: preservation-validator
 title: Preservation Validator
 type: architecture
-status: proposed
+status: implemented
 authority: canonical
 relations:
   - type: implements
@@ -13,7 +13,7 @@ relations:
     target: failure-policy
   - type: validates
     target: prompt-pipeline
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-17
 ---
 
 # Preservation Validator
@@ -43,13 +43,23 @@ but an LLM judge must not override a deterministic preservation failure.
 
 ## Result model
 
-Validation should return category-level findings containing the expected value,
-observed value, severity, and a safe user-facing description. This supports
-preview, retry prompts, evaluation, and debugging without storing full user
-prompts.
+Validation returns category-level findings containing a failure code, expected
+and observed counts, severity, and a safe user-facing description. Protected
+values remain in the in-memory element records used for restoration, but are not
+copied into finding descriptions. This supports retry prompts and debugging
+without encouraging prompt content to enter logs or persisted results.
 
 ## Retry
 
 One automatic retry may include the failed preservation categories. A second
 failure returns control to the client, which follows the
 [Failure Policy](../policies/failure-policy.md).
+
+## Implementation status
+
+The Phase 2 [preservation module](../../src/promptbridge/preservation.py) now
+implements deterministic restoration, category-level validation, structured
+runtime/restoration/validation failures, fail-closed results, and one bounded
+retry for preservation failures. The complete model-backed processing pipeline
+and macOS client integration remain planned work in the
+[Prompt Pipeline](prompt-pipeline.md) and subsequent roadmap phases.
