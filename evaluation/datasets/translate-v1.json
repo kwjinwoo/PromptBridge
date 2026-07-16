@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "dataset_id": "promptbridge-translate-v1",
+  "description": "Synthetic Korean developer prompts for Phase 1 quality validation.",
+  "cases": [
+    {
+      "id": "cpp-thread-safety",
+      "category": "C++",
+      "source": "`Worker::run()`이 C++20에서 thread-safe한지 확인하고 `std::mutex` 사용이 필요한지 설명해줘.",
+      "protected_elements": ["Worker::run()", "C++20", "std::mutex"],
+      "requirements": [["thread-safe", "thread safe"], ["explain", "describe"], ["necessary", "needed", "requires"]],
+      "forbidden_additions": ["implement the mutex", "write tests", "benchmark the code"]
+    },
+    {
+      "id": "cpp-ownership-refactor",
+      "category": "C++",
+      "source": "`Node*` 소유권을 `std::unique_ptr<Node>`로 바꾸되 `Graph::addNode`의 public API는 유지해줘.",
+      "protected_elements": ["Node*", "std::unique_ptr<Node>", "Graph::addNode"],
+      "requirements": [["ownership"], ["change", "convert", "replace", "refactor"], ["public API"], ["preserve", "keep", "maintain"]],
+      "forbidden_additions": ["shared_ptr", "change the public API", "add a destructor"]
+    },
+    {
+      "id": "python-version-check",
+      "category": "Python",
+      "source": "`parse_item`이 Python 3.11에서 동작하는지 확인하고 타입 힌트 오류만 수정해줘.",
+      "protected_elements": ["parse_item", "Python 3.11"],
+      "requirements": [["check", "verify"], ["works", "runs", "compatible"], ["type hint", "typing"], ["only"]],
+      "forbidden_additions": ["upgrade Python", "rewrite the function", "add dependencies"]
+    },
+    {
+      "id": "python-pytest-failure",
+      "category": "Python",
+      "source": "pytest에서 `TypeError: expected str, got bytes`가 발생하는 원인을 분석하고 수정안은 제안만 해줘.",
+      "protected_elements": ["pytest", "TypeError: expected str, got bytes"],
+      "requirements": [["analyze", "identify", "determine"], ["cause", "reason", "why"], ["suggest", "propose"], ["fix", "solution"]],
+      "forbidden_additions": ["apply the fix", "modify the code", "ignore the error"]
+    },
+    {
+      "id": "cmake-language-standard",
+      "category": "CMake",
+      "source": "`CMAKE_CXX_STANDARD`을 20으로 설정했는데도 `std::span`을 찾지 못하는 이유를 설명해줘.",
+      "protected_elements": ["CMAKE_CXX_STANDARD", "20", "std::span"],
+      "requirements": [["explain", "identify"], ["reason", "why"], ["cannot find", "not found", "fails to find"]],
+      "forbidden_additions": ["change the compiler", "set it to 23", "rewrite CMakeLists.txt"]
+    },
+    {
+      "id": "cmake-link-scope",
+      "category": "CMake",
+      "source": "`target_link_libraries(app PRIVATE fmt::fmt)`에서 `PRIVATE`을 유지한 채 링크 오류를 고쳐줘.",
+      "protected_elements": ["target_link_libraries(app PRIVATE fmt::fmt)", "PRIVATE"],
+      "requirements": [["fix", "resolve"], ["link", "linking"], ["keep", "preserve", "maintain"]],
+      "forbidden_additions": ["change PRIVATE to PUBLIC", "replace fmt", "remove fmt::fmt"]
+    },
+    {
+      "id": "metal-threadgroup-reduction",
+      "category": "Metal",
+      "source": "`reduce_sum` 커널의 `threadgroup` 메모리 접근에서 race가 있는지 검토해줘. 코드는 변경하지 마.",
+      "protected_elements": ["reduce_sum", "threadgroup"],
+      "requirements": [["review", "check", "analyze"], ["race"], ["do not change", "without changing", "without modifying"]],
+      "forbidden_additions": ["rewrite the kernel", "optimize the kernel", "change the code"]
+    },
+    {
+      "id": "metal-buffer-bounds",
+      "category": "Metal",
+      "source": "`MTLBuffer` 길이가 4096 bytes일 때 index 1024 접근이 안전한지 `float` 기준으로 계산해줘.",
+      "protected_elements": ["MTLBuffer", "4096 bytes", "index 1024", "float"],
+      "requirements": [["safe", "valid", "in bounds"], ["calculate", "determine"], ["based on", "assuming", "for"]],
+      "forbidden_additions": ["resize the buffer", "change the index", "use half"]
+    },
+    {
+      "id": "mlir-canonicalize-scope",
+      "category": "MLIR",
+      "source": "`func.func @main`에만 `canonicalize` pass를 적용하는 pipeline을 작성해줘.",
+      "protected_elements": ["func.func @main", "canonicalize"],
+      "requirements": [["write", "create"], ["pipeline"], ["only", "exclusively"]],
+      "forbidden_additions": ["apply it to every function", "add cse", "run lower-to-llvm"]
+    },
+    {
+      "id": "mlir-lowering-failure",
+      "category": "MLIR",
+      "source": "`arith.addi`가 `llvm.add`로 변환되지 않는 원인을 진단하고 pass 순서를 확인해줘.",
+      "protected_elements": ["arith.addi", "llvm.add"],
+      "requirements": [["diagnose", "identify", "determine"], ["cause", "reason", "why"], ["check", "verify"], ["pass order", "pass ordering", "order of passes"]],
+      "forbidden_additions": ["implement a new pass", "change the dialect", "remove arith.addi"]
+    },
+    {
+      "id": "llvm-instcombine-command",
+      "category": "LLVM",
+      "source": "`opt -passes=instcombine input.ll -S` 명령은 그대로 두고 결과가 비어 있는 이유를 분석해줘.",
+      "protected_elements": ["opt -passes=instcombine input.ll -S"],
+      "requirements": [["keep", "preserve", "unchanged"], ["analyze", "identify"], ["empty", "no output"], ["reason", "why"]],
+      "forbidden_additions": ["change the command", "add another pass", "modify input.ll"]
+    },
+    {
+      "id": "llvm-gep-explanation",
+      "category": "LLVM",
+      "source": "opaque pointer 모드에서 `getelementptr`의 두 번째 타입 인자가 필요한 이유만 설명해줘.",
+      "protected_elements": ["getelementptr"],
+      "requirements": [["opaque pointer", "opaque-pointer"], ["second type argument", "second type operand"], ["explain"], ["only", "why"]],
+      "forbidden_additions": ["write an example", "change the IR", "compare performance"]
+    },
+    {
+      "id": "git-rebase-explanation",
+      "category": "Git",
+      "source": "`git rebase --onto main release feature`가 어떤 commit을 이동하는지 예시 없이 설명해줘.",
+      "protected_elements": ["git rebase --onto main release feature", "commit"],
+      "requirements": [["explain", "describe"], ["move", "rebase"], ["without an example", "without using examples", "no example"]],
+      "forbidden_additions": ["run the command", "provide an example", "force push"]
+    },
+    {
+      "id": "git-attributes-conflict",
+      "category": "Git",
+      "source": "`.gitattributes`의 `merge=ours` 설정이 conflict를 숨길 수 있는지 검토해줘.",
+      "protected_elements": [".gitattributes", "merge=ours", "conflict"],
+      "requirements": [["review", "check", "assess"], ["hide", "mask", "suppress"]],
+      "forbidden_additions": ["change the setting", "delete .gitattributes", "resolve the conflict"]
+    },
+    {
+      "id": "docker-buildx-platform",
+      "category": "Docker",
+      "source": "`docker buildx build --platform linux/arm64 .`는 변경하지 말고 느린 원인만 분석해줘.",
+      "protected_elements": ["docker buildx build --platform linux/arm64 ."],
+      "requirements": [["do not change", "keep", "preserve"], ["analyze", "identify"], ["slow", "slowness"], ["cause", "reason"]],
+      "forbidden_additions": ["change the command", "use linux/amd64", "optimize the Dockerfile"]
+    },
+    {
+      "id": "dockerfile-code-fence",
+      "category": "Docker",
+      "source": "아래 Dockerfile 조각을 그대로 유지하고 cache가 무효화되는 이유를 설명해줘.\n\n```Dockerfile\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\n```",
+      "protected_elements": ["```Dockerfile\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\n```"],
+      "requirements": [["keep", "preserve", "unchanged"], ["cache"], ["invalidate", "invalidated", "invalidation"], ["explain"]],
+      "forbidden_additions": ["rewrite the Dockerfile", "reorder the lines", "add a cache mount"]
+    }
+  ]
+}

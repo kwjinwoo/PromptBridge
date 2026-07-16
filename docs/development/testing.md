@@ -9,7 +9,7 @@ relations:
     target: pre-commit-conventions
   - type: validates
     target: product-invariants
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Test-driven Development and Testing Convention
@@ -71,6 +71,13 @@ Run the narrowest relevant test during each cycle, then the affected suite and
 applicable repository quality gate before handoff. Report exact commands and
 results. Never claim a test passed unless it ran.
 
-No unit-test runner is configured yet. Select and document Python and Swift test
-commands when their first package or target is introduced; until then, report
-unit tests as unavailable rather than passed.
+Python evaluation tests use the standard-library `unittest` runner with no
+additional test dependency:
+
+```shell
+PYTHONPATH=src uv run python -m unittest discover -s tests -v
+```
+
+No Swift test target is configured yet. Select and document its command when the
+first Swift package or target is introduced; until then, report Swift unit tests
+as unavailable rather than passed.

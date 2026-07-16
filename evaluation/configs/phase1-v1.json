@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "evaluation_id": "phase1-translate-v1",
+  "dataset": "evaluation/datasets/translate-v1.json",
+  "prompt": "evaluation/prompts/translate-v1.txt",
+  "models": ["qwen3.5:4b", "gemma3:4b"],
+  "endpoint": "http://127.0.0.1:11434",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 4096,
+    "num_predict": 1024
+  },
+  "gates": {
+    "protected_pass_rate_min": 1.0,
+    "requirement_coverage_min": 0.9,
+    "hallucinated_requirement_rate_max": 0.0,
+    "discipline_pass_rate_min": 1.0,
+    "warm_latency_median_ms_max": 2000.0
+  }
+}
