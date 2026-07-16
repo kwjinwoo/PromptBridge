@@ -11,7 +11,7 @@ relations:
     target: protected-elements
   - type: informs
     target: prompt-pipeline
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-16
 ---
 
 # Translate Mode
@@ -46,9 +46,12 @@ Check whether this function is thread-safe.
 
 ## Initial generation parameters
 
-Use a low temperature, initially between `0.0` and `0.2`. Model-specific values
-must be selected through the [evaluation methodology](../evaluation/methodology.md),
-not treated as universal constants.
+The Phase 1 baseline uses the versioned
+[`translate-v1`](../../evaluation/prompts/translate-v1.txt) prompt with
+`qwen3.5:4b` Q4_K_M, temperature 0, seed 42, a 4,096-token context, a
+1,024-token output cap, and model thinking disabled. These are evaluation-backed
+baseline values, not universal constants. Model-specific changes must use the
+[evaluation methodology](../evaluation/methodology.md).
 
 ## Automatic application
 
