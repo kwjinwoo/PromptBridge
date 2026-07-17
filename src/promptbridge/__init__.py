@@ -1,1 +1,1 @@
-"""Deterministic prompt-preservation components."""
+"""Local prompt transformation and deterministic preservation components."""

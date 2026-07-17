@@ -60,6 +60,12 @@ failure returns control to the client, which follows the
 The Phase 2 [preservation module](../../src/promptbridge/preservation.py) now
 implements deterministic restoration, category-level validation, structured
 runtime/restoration/validation failures, fail-closed results, and one bounded
-retry for preservation failures. The complete model-backed processing pipeline
-and macOS client integration remain planned work in the
-[Prompt Pipeline](prompt-pipeline.md) and subsequent roadmap phases.
+retry for preservation failures. Category-bearing placeholders preserve model
+context without exposing protected values. Restoration also rejects placeholders
+that gain Markdown backtick wrapping; the runtime may remove only an exact,
+deterministic wrapper around an otherwise intact required placeholder before
+restoration.
+
+The Phase 3 model-backed [Prompt Pipeline](prompt-pipeline.md) and macOS client
+integration now consume this contract. Semantic requirement validation remains
+future work and never overrides a deterministic preservation failure.

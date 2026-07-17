@@ -16,8 +16,8 @@ last_reviewed: 2026-07-17
 
 ## Current phase
 
-Phase 2 — The deterministic preservation pipeline is completed. Phase 3 is next
-and has not started.
+Phase 4 — The menu-bar macOS application is next after Phase 3 completed the
+hotkey-driven safe replacement prototype.
 
 ## Overall status
 
@@ -30,18 +30,18 @@ and has not started.
 | Agent documentation workflow | Active | [Agent Skills](development/agent-skills.md) |
 | Evaluation runner | Implemented and passing | [Phase 1](roadmap/phase-1-quality-validation.md), [Raw Result](../evaluation/results/phase1-apple-m5-2026-07-16.json) |
 | Translate prompt | Validated for Phase 1 baseline | [Translate Mode](transformation/translate-mode.md), [Model Comparison](evaluation/model-comparison.md) |
-| Production prompt engine | Not started | [Prompt Pipeline](architecture/prompt-pipeline.md) |
+| Production prompt engine | Implemented; real runtime verified | [Prompt Pipeline](architecture/prompt-pipeline.md), [`runtime.py`](../src/promptbridge/runtime.py) |
 | Preservation validator | Implemented and passing | [Phase 2](roadmap/phase-2-preservation-validator.md), [`tests/test_preservation.py`](../tests/test_preservation.py) |
-| Hotkey prototype | Not started | [Phase 3](roadmap/phase-3-hotkey-prototype.md) |
+| Hotkey prototype | Phase 3 completed | [Phase 3](roadmap/phase-3-hotkey-prototype.md), [`main.swift`](../Sources/PromptBridgeHotkey/main.swift) |
 | macOS application | Not started | [Phase 4](roadmap/phase-4-macos-application.md) |
 | Evaluation dataset | Implemented for Phase 1 | [Evaluation Methodology](evaluation/methodology.md) |
-| Python unit tests | Implemented and passing | [Testing Convention](development/testing.md) |
+| Python and Swift unit tests | Implemented and passing | [Testing Convention](development/testing.md) |
 | CI | Not configured | No workflow exists |
 
 ## Active work
 
-- Begin Phase 3 with a hotkey-driven selection capture and safe replacement
-  prototype.
+- Define the Phase 4 application boundary from the proven prototype without
+  treating its subprocess bridge as the durable service design.
 - Integrate the local quality gates into the future CI workflow.
 
 ## Recently completed
@@ -62,30 +62,38 @@ and has not started.
 - Completed Phase 2 with deterministic protected-element detection, placeholder
   restoration, category-level validation, fail-closed structured results, and a
   single bounded preservation retry.
+- Completed Phase 3 with a global Command-Option-T prototype, local stdin/JSON
+  runtime bridge, full clipboard representation recovery, fail-closed focus and
+  ownership checks, and successful TextEdit plus conditional VS Code real-target
+  workflows.
 
 ## Blockers
 
-None currently recorded.
+None for the completed Phase 3 scope.
 
 ## Next milestone
 
-Start the end-to-end replacement prototype required by
-[Phase 3](roadmap/phase-3-hotkey-prototype.md).
+Define and begin the menu-bar MVP required by
+[Phase 4](roadmap/phase-4-macos-application.md).
 
 ## Known gaps
 
-- No production model-backed prompt-engine integration exists; only the Phase 2
-  preservation subsystem is implemented.
+- The production prompt-engine bridge completed real local requests. A
+  diagnostic 16-case production-pipeline sweep allowed 12 safe results and
+  rejected four placeholder-order or omission failures after the bounded retry.
 - The Phase 1 keyword-based coverage and addition scores are deterministic
   proxies, not complete semantic judgments.
-- Clipboard behavior has not been prototyped against target applications.
+- TextEdit and VS Code with renderer accessibility are verified targets. Codex,
+  Chrome, Safari, Terminal, and ordinary VS Code without an exposed focused
+  Accessibility element are not supported claims and remain Phase 6 evaluation
+  work.
 - Documentation graph validation is available locally but not automated in CI.
 
 ## Repository health
 
 | Check | Status |
 |---|---|
-| Build | Not configured |
-| Unit tests | Python evaluation suite passing; Swift not configured |
+| Build | Swift debug and release builds passing |
+| Unit tests | Python and Swift suites passing |
 | Documentation graph | Local pre-commit validation passing |
 | Continuous integration | Not configured |

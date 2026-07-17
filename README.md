@@ -8,11 +8,13 @@ identifiers, commands, paths, formatting, and technical intent.
 
 ## Project status
 
-PromptBridge is currently in Phase 1: transformation quality validation. The
-docs knowledge graph, local quality gates, development conventions, and agent
-workflows are available. The initial evaluation dataset, prompt engine,
-preservation validator, global hotkey, and macOS application are not implemented
-yet.
+PromptBridge has completed Phase 3: the local prompt pipeline, deterministic
+preservation validator, Swift replacement coordinator, and executable global
+hotkey prototype are implemented and tested. The real workflow passed in
+TextEdit and in an isolated VS Code process with Electron renderer accessibility
+enabled, including clipboard restoration. Phase 4, the menu-bar macOS
+application, is next. Ollama 0.32.0 and the selected local `qwen3.5:4b` model are
+installed and verified on loopback.
 
 - [Current status](docs/status.md)
 - [Roadmap](docs/roadmap/index.md)
@@ -46,6 +48,20 @@ development environment and run the local quality gate with:
 uv sync
 uv run pre-commit run --all-files
 ```
+
+Run the Phase 3 prototype from the repository root while the local Ollama
+service and `qwen3.5:4b` model are available:
+
+```shell
+swift run promptbridge-hotkey
+```
+
+Grant Accessibility permission to the built prototype executable, then select a
+synthetic test instruction and press Command-Option-T. The prototype fails
+closed without that permission or when the runtime, validation, focus, or
+clipboard ownership check fails. See the
+[compatibility matrix](docs/evaluation/compatibility-matrix.md) before treating
+an application as supported.
 
 Executable behavior is developed with Red-Green-Refactor. See the
 [testing convention](docs/development/testing.md),

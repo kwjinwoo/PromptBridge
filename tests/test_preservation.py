@@ -63,6 +63,17 @@ class ProtectionTests(unittest.TestCase):
 
         self.assertNotIn(result.protected[0].placeholder, source)
 
+    def test_placeholder_names_expose_category_but_not_protected_value(self) -> None:
+        source = "`parse_item`과 /tmp/input.txt를 확인해."
+
+        result = protect(source)
+        placeholders = {element.category: element.placeholder for element in result.protected}
+
+        self.assertIn("__PB_INLINE_CODE_", placeholders[ElementCategory.INLINE_CODE])
+        self.assertIn("__PB_PATH_", placeholders[ElementCategory.PATH])
+        self.assertNotIn("parse_item", placeholders[ElementCategory.INLINE_CODE])
+        self.assertNotIn("input", placeholders[ElementCategory.PATH])
+
 
 class RestorationTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -116,6 +127,19 @@ class RestorationTests(unittest.TestCase):
 
         self.assertFalse(result.succeeded)
         self.assertIn("placeholder_missing", {finding.code for finding in result.findings})
+
+    def test_rejects_model_added_backticks_around_placeholder(self) -> None:
+        first = self.protection.protected[0]
+        transformed = self.protection.text.replace(
+            first.placeholder,
+            f"`{first.placeholder}`",
+        )
+
+        result = restore(transformed, self.protection.protected)
+
+        self.assertFalse(result.succeeded)
+        self.assertIsNone(result.text)
+        self.assertIn("placeholder_wrapped", {finding.code for finding in result.findings})
 
 
 class ValidationTests(unittest.TestCase):

@@ -248,7 +248,9 @@ def protect(source: str) -> ProtectionResult:
             original=source[start:end],
             start=start,
             end=end,
-            placeholder=f"__PB_{namespace}_{index}__" if should_protect else None,
+            placeholder=(
+                f"__PB_{category.value.upper()}_{namespace}_{index}__" if should_protect else None
+            ),
         )
         for index, (start, end, category, should_protect) in enumerate(candidates)
     )
@@ -276,6 +278,24 @@ def restore(text: str, elements: Iterable[ProtectedElement]) -> RestorationResul
                     expected_count=1,
                     observed_count=count,
                     description=f"A required {element.category.value} placeholder was not restored exactly once.",
+                )
+            )
+            continue
+        position = text.index(placeholder)
+        before = text[position - 1] if position > 0 else ""
+        after_index = position + len(placeholder)
+        after = text[after_index] if after_index < len(text) else ""
+        if before == "`" or after == "`":
+            findings.append(
+                Finding(
+                    category=element.category,
+                    code="placeholder_wrapped",
+                    severity="error",
+                    expected_count=0,
+                    observed_count=1,
+                    description=(
+                        f"A required {element.category.value} placeholder gained Markdown wrapping."
+                    ),
                 )
             )
     if findings:
@@ -334,7 +354,7 @@ def _placeholder_namespace(source: str) -> str:
     salt = 0
     while True:
         digest = hashlib.sha256(f"{salt}\0{source}".encode()).hexdigest()[:12]
-        if f"__PB_{digest}_" not in source:
+        if digest not in source:
             return digest
         salt += 1
 

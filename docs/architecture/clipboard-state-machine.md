@@ -2,14 +2,14 @@
 id: clipboard-state-machine
 title: Clipboard State Machine
 type: architecture
-status: proposed
+status: implemented
 authority: canonical
 relations:
   - type: implements
     target: product-invariants
   - type: depends-on
     target: prompt-pipeline
-last_reviewed: 2026-07-15
+last_reviewed: 2026-07-17
 ---
 
 # Clipboard State Machine
@@ -57,3 +57,17 @@ stateDiagram-v2
 Initial prototypes may use synthetic `Cmd+C` and `Cmd+V` events. Direct
 Accessibility access can be evaluated later for applications where event-based
 capture is unreliable.
+
+## Implementation status
+
+The Phase 3 [replacement coordinator](../../Sources/PromptBridgeCore/ReplacementCoordinator.swift)
+serializes invocations and checks Accessibility permission, clipboard ownership,
+and application plus focused-element identity before paste. The
+[macOS adapter](../../Sources/PromptBridgePlatform/MacOSSelectionSystem.swift)
+captures every available pasteboard item representation and restores it only
+when PromptBridge still owns the pasteboard change count. Synthetic Swift tests
+cover success, focus change, clipboard change, permission denial, copy timeout,
+runtime and validation failure, concurrent invocation, and the paste-error race.
+
+Application compatibility remains under evaluation because the current process
+does not have Accessibility permission.

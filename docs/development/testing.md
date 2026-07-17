@@ -9,7 +9,7 @@ relations:
     target: pre-commit-conventions
   - type: validates
     target: product-invariants
-last_reviewed: 2026-07-16
+last_reviewed: 2026-07-17
 ---
 
 # Test-driven Development and Testing Convention
@@ -78,6 +78,12 @@ additional test dependency:
 PYTHONPATH=src uv run python -m unittest discover -s tests -v
 ```
 
-No Swift test target is configured yet. Select and document its command when the
-first Swift package or target is introduced; until then, report Swift unit tests
-as unavailable rather than passed.
+Swift core and platform tests use Swift Package Manager:
+
+```shell
+swift test
+```
+
+The Swift tests live under `swift-tests/` to avoid a case-insensitive filesystem
+conflict with the Python `tests/` directory. Run focused Swift tests with
+`swift test --filter <test-name>` during Red-Green-Refactor cycles.
